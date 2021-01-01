@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    var pageNum = Context.Request.Query["Page"].ToString();
+    var images = $"https://CDNURL/eBooks/{pageNum}.png";
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" asp-action="eBooks" asp-route-page="01">01</a></li>
+        <li class="page-item"><a class="page-link" asp-action="eBooks" asp-route-page="02">02</a></li>
+        <li class="page-item"><a class="page-link" asp-action="eBooks" asp-route-page="03">03</a></li>
+        <li class="page-item"><a class="page-link" asp-action="eBooks" asp-route-page="04">04</a></li>
+        <li class="page-item"><a class="page-link" asp-action="eBooks" asp-route-page="05">05</a></li>
+    </ul>
+</nav>
+<h1>@pageNum</h1>
+<p><img src="@images" /></p>
